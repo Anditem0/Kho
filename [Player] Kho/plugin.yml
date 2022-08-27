@@ -1,0 +1,15 @@
+name: Kho_Pm4
+api: 4.0.0
+main: Ki\Kho\KhoTV
+version: 1.0.0
+author: Ki
+web: GitHub( AndItem01 )
+
+command: 
+  kho:
+    description: §a Mở Kho Cá Nhân 
+    permission: kho.use
+  
+permissions: 
+  default: op
+  
