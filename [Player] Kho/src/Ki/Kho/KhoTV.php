@@ -173,7 +173,7 @@ class KhoTV extends PluginBase implements Listener{
                   $this->data->setNested("{$name}.watermelon", $this->data->getNested("{$name}.watermelon") + $drop->getCount());
                 }elseif($id == "83"){ 
                   $this->data->setNested("{$name}.sugarcane", $this->data->getNested("{$name}.sugarcane") + $drop->getCount());
-                }elseif($id == "127"){
+                }elseif($id == "207"){
                   $this->data->setNested("{$name}.beetroots", $this->data->getNested("{$name}.stone") + $drop->getCount());
                 }elseif($id == "141"){
                   $this->data->setNested("{$name}.carot", $this->data->getNested("{$name}.carot") + $drop->getCount());
