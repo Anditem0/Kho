@@ -120,29 +120,20 @@ class KhoTV extends PluginBase implements Listener{
                 142 => "potato"
                 ];*/
             foreach($drops = $event->getDrops() as $drop) {
-                /*foreach($array as $id => $type){
-                  if($idblock == $id){
-                      $this->data->setNested("{$name}.{$type}", $this->data->getNested("{$name}.{$type}") + $drop->getCount());
-                      $this->data->save();
-                      break;
-                  }else{
-                   
+            /*foreach($array as $id => $type){
+                if($idblock == $id){
+                  if(isset($array[$block->getId()])){
+                    $type = $array[$block->getId()];
+                    $this->data->setNested("{$name}.{$type}", $this->data->getNested("{$name}.{$type}") + $drop->getCount());
+                    $this->data->save();
+                    $event->setDrops([]);
                     break;
-                  }
+                    }
+                }else{
+                  $player->getInventory()->addItem($drop)
+                  break;
                 }
-               
-              }
-            }
-          }
-        }
-      
-                  
-                  #}else{
-                    #$player->getInventory()->addItem($drop);
-
-                  #}
-                  /*}
-*/
+                #}*/
                 if($id == "4"){
                   $this->data->setNested("{$name}.stone", $this->data->getNested("{$name}.stone") + $drop->getCount());
                 }elseif($id == "16"){
