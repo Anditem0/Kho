@@ -1,0 +1,16 @@
+name: Kho_Pm4
+api: 4.0.0
+main: Ki\Kho\KhoTV
+version: 1.0.0
+author: (Nguyễn Công Danh , HậuGM )
+Edit: (Let, Ki)
+web: Fb(https://www.facebook.com/quocbui.an.2406) 
+
+command: 
+  kho:
+    description: §a Mở Kho Cá Nhân 
+    permission: kho.use
+            
+permissions: 
+  default: true
+                
