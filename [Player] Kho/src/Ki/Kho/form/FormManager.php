@@ -197,7 +197,7 @@ class FormManager {
     $form->addButton("§l§c•§9 Bí Ngô §c•\n§l§c•§9 Số lượng: §e" . KhoTV::getInstance()->data->getNested("{$name }.pumpkin") . " §c•", 0, "textures/ui/bingo");
     $form->addButton("§l§c•§9 Dưa Hấu §c•\n§l§c•§9 Số lượng: §e" . KhoTV::getInstance()->data->getNested("{$name }.watermelon") . " §c•", 0, "textures/ui/duahau");
     $form->addButton("§l§c•§9 Mía §c•\n§l§c•§9 Số lượng: §e" . KhoTV::getInstance()->data->getNested("{$name }.sugarcane") . " §c•", 0, "textures/ui/mia");
-    $form->addButton("§l§c•§9 beetroots §c•\n§l§c•§9 Số lượng: §e" . KhoTV::getInstance()->data->getNested("{$name }.beetroots") . " §c•", 0, "textures/ui/beetroots");
+    $form->addButton("§l§c•§9 Củ Cải §c•\n§l§c•§9 Số lượng: §e" . KhoTV::getInstance()->data->getNested("{$name }.beetroots") . " §c•", 0, "textures/ui/beetroots");
     $form->addButton("§l§c•§9 Cà Rốt  §c•\n§l§c•§9 Số lượng: §e" . KhoTV::getInstance()->data->getNested("{$name }.carot") . " §c•", 0, "textures/ui/carot");
     $form->addButton("§l§c•§9 Khoai Tây §c•\n§l§c•§9 Số lượng: §e" . KhoTV::getInstance()->data->getNested("{$name }.potato ") . " §c•", 0, "textures/ui/khoaitay");
   }
@@ -226,8 +226,11 @@ class FormManager {
           if($count = KhoTV::getInstance()->data->getNested("{$player->getName()}.paddy") >= $data[1]){
             $amount = KhoTV::getInstance()->data->getNested("{$player->getName()}.paddy") - $data[1];
             KhoTV::getInstance()->data->setNested("{$player->getName()}.paddy", $amount);
-            $player->getInventory()->addItem(ItemFactory::getInstance()->get( 296, 0, $data[1]));
-            $player->sendMessage( "§l§c•§a Bạn đã rút ".$data[1]." Lúa Mì thành công, còn lại".$amount);
+            $hatgiong = $data[1] / 3;
+            $lua = $data[1] - $hatgiong;
+            $player->getInventory()->addItem(ItemFactory::getInstance()->get( 296, 0, $lua));
+            $player->getInventory()->addItem(ItemFactory::getInstance()->get( 295, 0, $hatgiong));
+            $player->sendMessage( "§l§c•§a Bạn đã rút ".$data[1]." Lúa Mì và hạt giống thành công, còn lại".$amount);
             KhoTV::getInstance()->data->save();
           }else{
             $player->sendMessage("§l§c•§c Bạn không đủ Lúa Mì để rút\n");
@@ -259,7 +262,7 @@ class FormManager {
           if($count = KhoTV::getInstance()->data->getNested("{$player->getName()}.watermelon") >= $data[1]){
             $amount = KhoTV::getInstance()->data->getNested("{$player->getName()}.watermelon") - $data[1];
             KhoTV::getInstance()->data->setNested("{$player->getName()}.watermelon", $amount);
-            $player->getInventory()->addItem(ItemFactory::getInstance()->get( 103, 0, $data[1]));
+            $player->getInventory()->addItem(ItemFactory::getInstance()->get( 360, 0, $data[1]));
             $player->sendMessage( "§l§c•§a Bạn đã rút ".$data[1]." Dưa Hấu thành công, còn lại".$amount);
             KhoTV::getInstance()->data->save();
           }else{
