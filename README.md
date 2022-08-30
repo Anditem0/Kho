@@ -13,3 +13,5 @@ resource_packs.yml thành:
   
     
   - Bạn có Thể tùy chỉnh số tiền bán item tại config.yml
+
+# Lưu Ý Plugin đã tí hợp Sẳn AutoInv nếu có plugins autoinv sẽ bị lỗi
