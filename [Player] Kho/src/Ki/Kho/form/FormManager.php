@@ -518,7 +518,7 @@ class FormManager {
                 break;
             case false:
                 KhoTV::getInstance()->modem[$player->getName()] = false;
-                $player->sendMesage("§l§c•§e Bạn đã tắt tự động vào động vào kho\n");
+                $player->sendMessage("§l§c•§e Bạn đã tắt tự động vào động vào kho\n");
                 break;
         }
     });
