@@ -66,8 +66,9 @@ class KhoTV extends PluginBase implements Listener{
       $this->data->save();
       #$this->modem->set($name, "off");
       #$this->modem->save();
-      $this->modem[$name] = false;
+      
         }
+      $this->modem[$name] = false;
   }
   public function onQuit(PlayerQuitEvent $ev){
     $player = $ev->getPlayer();
