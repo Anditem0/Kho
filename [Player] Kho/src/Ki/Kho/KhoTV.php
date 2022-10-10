@@ -91,7 +91,12 @@ class KhoTV extends PluginBase implements Listener{
             }
           foreach($event->getDrops() as $drop){
               if($player->getInventory()->canAddItem($drop)){
-                $player->getInventory()->addItem($drop);
+                $enchant = EnchantmentIdMap::getInstance()->fromId("16");
+                if($item->getEnchantment($enchant) !== null){
+                  $player->getInventory()->addItem(ItemFactory::getInstance()->get($id,0,1));
+                }else{
+                  $player->getInventory()->addItem($drop);
+                                    }
               }else{
                 $player->sendTitle("§l§a【§6Kho§a】§r Kho đồ của bạn đã full có thể bán hoặc bật tự động cho vào kho");
               }
@@ -135,6 +140,8 @@ class KhoTV extends PluginBase implements Listener{
                   break;
                 }
                 #}*/
+                if($id == "1"){
+                  $this->data->setNested("{$name}.stone", $this->data->getNested("{$name}.stone") + $drop->getCount());
                 if($id == "4"){
                   $this->data->setNested("{$name}.stone", $this->data->getNested("{$name}.stone") + $drop->getCount());
                 }elseif($id == "16"){
@@ -151,6 +158,8 @@ class KhoTV extends PluginBase implements Listener{
                   $this->data->setNested("{$name}.lapis", $this->data->getNested("{$name}.lapis") + $drop->getCount());
                 }elseif($id == "153"){
                   $this->data->setNested("{$name}.thanhanh", $this->data->getNested("{$name}.thanhanh") + $drop->getCount());
+                }elseif($id == "73"){
+                  $this->data->setNested("{$name}.dado", $this->data->getNested("{$name}.dado") + $drop->getCount());
                 }elseif($id == "74"){
                   $this->data->setNested("{$name}.dado", $this->data->getNested("{$name}.dado") + $drop->getCount());
                 }elseif($id == "17"){
