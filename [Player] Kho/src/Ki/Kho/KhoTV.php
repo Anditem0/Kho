@@ -190,5 +190,5 @@ class KhoTV extends PluginBase implements Listener{
             }
           }
         }
-      
+      }
 
