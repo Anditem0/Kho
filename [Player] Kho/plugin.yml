@@ -12,5 +12,6 @@ command:
     permission: kho.use
             
 permissions: 
-  default: true
+  kho.use:
+    default: true
                 
